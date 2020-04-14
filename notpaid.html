@@ -1,0 +1,32 @@
+<html>
+    <button ><a href="/">Home</a></button>
+    <body style="background-color:khaki;">
+        <title>Purchase page</title>
+        <h1 style="text-align: center;color:darkgreen;">CUSTOMERS WHO HAVE NOT PAID THE AMOUNT</h1>
+        <font size="5"><table align="center">
+        {% block body %}
+            <tr>
+                <th style="font-size:x-large;color:darkred;">Customer-ID</th>
+                <th style="font-size:x-large;color:darkred;">Stock-ID</th>
+                <th style="font-size:x-large;color:darkred;">Quantity</th>
+                <th style="font-size:x-large;color:darkred;">Total-Amount</th>
+                <th style="font-size:x-large;color:darkred;">Paid-Amount</th>
+                <th style="font-size:x-large;color:darkred;">Not-Paid-Amount</th>
+            </tr>
+            {% for data1 in data %}
+                {% if data1.status==0 %}
+            <tr>
+                <td style="font-size:larger">{{data1.cus_id}}</td>
+                <td style="font-size:larger">{{data1.stock_id}}</td>
+                <td style="font-size:larger">{{data1.quan}}</td>
+                <td style="font-size:larger">{{data1.amt}}</td>
+                <td style="font-size:larger">{{data1.paid}}</td>
+                <td style="font-size:larger">{{data1.notpaid}}</td>
+            </tr>
+                {% endif %}
+            {% endfor %}
+        {% endblock %}
+        </table>
+    </pre>
+    </body>
+</html>

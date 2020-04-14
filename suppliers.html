@@ -1,0 +1,46 @@
+<html>
+    <button ><a href="/">Home</a></button>
+    <body style="background-color:lemonchiffon;">
+        <title>Supplier page</title>
+        <h1 style="text-align: center;color:darkgreen;">SUPPLIERS OF THE WHOLESALE COMPANY</h1>
+        <b>
+    <pre>
+        <h3 style="text-align: center;color:azure;font-size:large;">Supply Details</h3>
+                                                                    <form method="POST">
+                                                                        Supplier ID    <input type="number" name="Buyer_id">
+
+                                                                        Supplier Name  <input type="text" name="Buy_Name">
+
+                                                                        Address        <input type="text" name="address">
+
+                                                                        Stock ID       <input type="number" name="stock_id">
+
+                                                                        Quantity       <input type="number" name="quan">
+
+                                                                        <input type="submit" name="ADD"></b>
+            <font size="5"><table align="center"></form>
+                <p style="text-align: center;color:indigo;">SUPPLIERS LIST</p>
+                {% block body %}{{data}}
+            <tr>
+                <th style="font-size:x-large;color:darkred;">Supplier-ID</th>
+                <th style="font-size:x-large;color:darkred;">Supplier-Name</th>
+                <th style="font-size:x-large;color:darkred;">Address</th>
+                <th style="font-size:x-large;color:darkred;">Stock-ID</th>
+                <th style="font-size:x-large;color:darkred;">Quantity</th>
+                <th style="font-size:x-large;color:darkred;">Amount</th>
+            </tr>
+            {% for data in data1 %}
+            <tr>
+                <td style="font-size:larger">{{data.sup_id}}</td>
+                <td style="font-size:larger">{{data.sup_name}}</td>
+                <td style="font-size:larger">{{data.address}}</td>
+                <td style="font-size:larger">{{data.stock_id}}</td>
+                <td style="font-size:larger">{{data.quan}}</td>
+                <td style="font-size:larger">{{data.amt}}</td>
+            </tr>
+            {% endfor %}
+        {% endblock %}
+        </table>
+    </pre>
+    </body>
+</html>

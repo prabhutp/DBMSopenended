@@ -1,0 +1,39 @@
+<html>
+    <button ><a href="/">Home</a></button>
+    <body style="background-color:turquoise;">
+        <title>Products page</title>
+        <h1 style="text-align: center;color:darkgreen;">PRODUCTS OF THE WHOLESALE COMPANY</h1>
+    <pre>
+      <b> <h3 style="text-align: center;color:azure;font-size:large;">Product Entry</h3> 
+                                                            <form method="POST">
+                                                                Product ID                     <input type="number" name="prod_id">
+
+                                                                Product Name                   <input type="text" name="prod_name">
+
+                                                                Amount per one quantity        <input type="number" name="amt">
+
+                                                                Minimum Quantity               <input type="number" name="min_quan">
+
+                                                                <input type="submit" name="ADD"></b>
+<font size="5"><table align="center"></form>
+<p style="text-align: center;color:indigo;">PRODUCTS LIST</p>
+        {% block body %}
+            <tr>
+                <th style="font-size:x-large;color:darkred;">Product-ID</th>
+                <th style="font-size:x-large;color:darkred;">Product-Name</th>
+                <th style="font-size:x-large;color:darkred;">Amount</th>
+                <th style="font-size:x-large;color:darkred;">Minimum-Quantity</th>
+            </tr>
+            {% for data1 in data %}
+            <tr>
+                <td style="font-size:larger">{{data1.prod_id}}</td>
+                <td style="font-size:larger">{{data1.prod_name}}</td>
+                <td style="font-size:larger">{{data1.amt}}</td>
+                <td style="font-size:larger">{{data1.min}}</td>
+            </tr>
+            {% endfor %}
+        {% endblock %}
+        </table>
+    </pre>
+    </body>
+</html>

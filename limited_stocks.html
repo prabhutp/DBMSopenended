@@ -1,0 +1,24 @@
+<html>
+    <button ><a href="/">Home</a></button>
+    <body style="background-color:khaki;">
+        <title>Limited Stocks page</title>
+        <h1 style="text-align: center;color:darkgreen;">PRODUCTS WHICH HAS QUANTITY LESS THAN MINIMUM STOCK</h1>
+        <font size="5"><table align="center">
+        {% block body %}
+            <tr>
+                <th style="font-size:x-large;color:darkred;">Stock-ID</th>
+                <th style="font-size:x-large;color:darkred;">Stock-Name</th>
+                <th style="font-size:x-large;color:darkred;">Quantity</th>
+            </tr>
+            {% for data1 in data %}
+            <tr>
+                <td style="font-size:larger">{{data1.id}}</td>
+                <td style="font-size:larger">{{data1.name}}</td>
+                <td style="font-size:larger">{{data1.quantity}}</td>
+            </tr>
+            {% endfor %}
+        {% endblock %}
+        </table>
+    </pre>
+    </body>
+</html>

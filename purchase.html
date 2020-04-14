@@ -1,0 +1,46 @@
+<html>
+    <button ><a href="/">Home</a></button>
+    <body style="background-color:steelblue;">
+        <title>Purchase page</title>
+        <h1 style="text-align: center;color:darkgreen;">SOLD PRODUCT DETAILS OF THE WHOLESALE COMPANY</h1>
+    <pre>
+      <b><h3 style="text-align: center;color:azure;font-size:large;">Purchase Entry</h3> 
+                                                                                <form method="POST">
+                                                                                    Customer ID  :  <input type="number" name="cus_id">
+
+                                                                                    Stock ID     :  <input type="number" name="stock_id">
+
+                                                                                    Quantity     :  <input type="number" name="quan">
+
+                                                                                    Total Amount :  <input type="number" name="amt">
+
+                                                                                    Paid Amount  :  <input type="number" name="paid_amt">
+
+                                                                                    <input type="submit" name="ADD"></b>
+<font size="5"><table align="center"></form>
+<p style="text-align: center;color:indigo;">Purchase LIST</p>
+        {% block body %}
+            <tr>
+                <th style="font-size:x-large;color:darkred;">Customer-ID</th>
+                <th style="font-size:x-large;color:darkred;">Stock-Id</th>
+                <th style="font-size:x-large;color:darkred;">Quantity</th>
+                <th style="font-size:x-large;color:darkred;">Amount</th>
+                <th style="font-size:x-large;color:darkred;">Paid</th>
+                <th style="font-size:x-large;color:darkred;">Not-Paid</th>
+                <th style="font-size:x-large;color:darkred;">Status</th>
+            </tr>
+            {% for data1 in data %}
+            <tr>
+                <td style="font-size:larger">{{data1.cus_id}}</td>
+                <td style="font-size:larger">{{data1.stock_id}}</td>
+                <td style="font-size:larger">{{data1.quan}}</td>
+                <td style="font-size:larger">{{data1.amt}}</td>
+                <td style="font-size:larger">{{data1.paid}}</td>
+                <td style="font-size:larger">{{data1.notpaid}}</td>
+                <td style="font-size:larger">{{data1.status}}</td>
+            </tr>
+            {% endfor %}
+        {% endblock %}
+        </table>
+    </pre>
+</html>

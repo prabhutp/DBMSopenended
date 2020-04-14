@@ -1,0 +1,35 @@
+<html>
+    <button ><a href="/">Home</a></button>
+    <body style="background-color:plum;">
+        <title>Customer page</title>
+        <h1 style="text-align: center;color:darkgreen;">CUSTOMERS LIST OF THE WHOLESALE COMPANY</h1>
+    <pre>
+        <b><h3 style="text-align: center;color:azure;font-size:large;">Customer Details Entry</h3>
+                                                                    <form method="POST">
+                                                                        Customer ID  :  <input type="number" name="cus_id">
+
+                                                                        Customer Name:  <input type="text" name="cus_name">
+
+                                                                        Address      :  <input type="text" name="cus_add">
+
+                                                                        <input type="submit" name="ADD"></b>
+<font size="5"><table align="center"></form>
+<p style="text-align: center;color:indigo;">CUSTOMERS LIST</p>
+        {% block body %}
+            <tr>
+                <th style="font-size:x-large;color:darkred;">Customer ID</th>
+                <th style="font-size:x-large;color:darkred;">Customer Name</th>
+                <th style="font-size:x-large;color:darkred;">Address</th>
+            </tr>
+            {% for data1 in data %}
+            <tr>
+                <td style="font-size:larger">{{data1.cus_id}}</td>
+                <td style="font-size:larger">{{data1.cus_name}}</td>
+                <td style="font-size:larger">{{data1.cus_add}}</td>
+            </tr>
+            {% endfor %}
+        {% endblock %}
+        </table>
+    </pre>
+    </body>
+</html>

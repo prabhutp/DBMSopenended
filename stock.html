@@ -1,0 +1,38 @@
+<html>
+    <button ><a href="/">Home</a></button>
+    <body style="background-color: cadetblue;">
+        <title>Stock page</title>
+        <h1 style="text-align: center;color:darkgreen;">STOCK OF THE WHOLESALE COMPANY</h1>
+    <pre>
+        <h3 style="text-align: center;color:azure;font-size:large;">STOCK Entry</h3>            
+                                                                        <form method="POST">
+                                                                            <b>Stock ID    <input type="number" name="Id">
+
+                                                                            Stock Name  <input type="text" name="Name">
+
+                                                                            Quantity    <input type="number" name="Quan">
+
+                                                                            <input type="submit" name="ADD" value="ADD"></b>
+
+    <font size="5"><table align="center"></form>
+        <p style="text-align: center;color:indigo;">STOCK LIST</p>
+        {% block body %}        
+            <b><tr>
+                <th style="font-size:x-large;color:darkred;">Stock-ID</th>
+                <th style="font-size:x-large;color:darkred;">Stock-Name</th>
+                <th style="font-size:x-large;color:darkred;">Quantity</th>
+            </tr>
+            </b>
+            {% for data1 in data %}
+                        <tr>
+                            <td style="font-size:larger">{{data1.id}}</td>
+                            <td style="font-size:larger">{{data1.name}}</td>
+                            <td style="font-size:larger">{{data1.quantity}}</td>
+                        </tr>
+            {% endfor %}
+        {% endblock %}
+        </table>
+    </font>    
+    </pre>
+    </body>
+</html>
